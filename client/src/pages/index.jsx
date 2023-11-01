@@ -12,7 +12,8 @@ function Home() {
               Then you can go over to <i>Play Game</i> to start playing the game. 
           </p>
       </div>
-      <div className={styles.image}><Image src={acmLogo} width={200} height={200} alt="acmlogo"/>
+      <div className={styles.image}>
+        <Image src={acmLogo} width={200} height={200} alt="acmlogo"/>
       </div>
     </div>
   );
