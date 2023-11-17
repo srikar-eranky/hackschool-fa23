@@ -5,12 +5,21 @@
     Stack content vertically
     Center text horizontally 
     */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: vertical;
+    text-align: horizontal;
+    
 }
 .start_game {
     /* 
     Create a flex container to stack content vertically
     Add a gap of 40px between items
     */
+    display: flex;
+    flex-direction: vertical;
+    padding: 40px;
 }
 
 .sentence_label {
@@ -29,6 +38,11 @@
     Add some padding to make the button taller
     Set the font size so we can read the text
     */
+    background-color: orange;
+    border-color: orange;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: medium;
 }
 
 .start_button:hover {
@@ -36,6 +50,8 @@
     - Change opacity to 80%
     - Change mouse cursor to pointer
     */
+    opacity: 80%;
+    cursor: pointer;
 }
 
 /* For styling the actual typing game component */

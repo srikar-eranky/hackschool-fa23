@@ -1,24 +1,32 @@
-
-const getGame = async (req, res) => {
-    const game = {
-        sentence: "Hello there",
-        correctCharacters: 14,
-        incorrectCharacters: 15,
-        wpm: 100,
-        time: 13.33
-    };
-
-    res.status(200).json(game);
+const GameStats = require('../models/GameSchema');
+const getAllGames = async (req, res) => {
+    const gameStats = await GameStats.find();
+    res.status(200).json(gameStats);
 }
+//const getGame = async (req, res) => {
+    //const game = {
+        //sentence: "Hello there",
+        //correctCharacters: 14,
+        //incorrectCharacters: 15,
+        //wpm: 100,
+        //time: 13.33
+   // };
+
+   // res.status(200).json(game);
+//}
 
 const postGame = async (req, res) => {
-    const message = req.body;
-    const sentence = message.sentence;
-    const correctCharacters = message.correctCharacters;
-    const incorrectCharacters = message.incorrectCharacters;
-    const wpm = message.wpm;
-    const time = message.time;
-    
+    const newGameStat = await GameStats.create(req.body);
+    res.status(200).json(newGameStat);
+    //const message = req.body;
+   // const newGame = {
+   //     sentence: message.sentence,
+    //    correctCharacters: message.correctCharacters,
+     //   incorrectCharacters: message.incorrectCharacters,
+       // wpm: message.wpm,
+    //    time: message.time
+   // }
+    /*
     if(!sentence || !correctCharacters || !incorrectCharacters || !wpm || !time){
         res.status(400).json({ error: "invalid request"});
         console.log(message)
@@ -29,8 +37,9 @@ const postGame = async (req, res) => {
         return
         
     }
-    res.status(200).json(message);
+    */
+
+
 }
 
-
-module.exports = { getGame, postGame };
+module.exports = { postGame, getAllGames};
