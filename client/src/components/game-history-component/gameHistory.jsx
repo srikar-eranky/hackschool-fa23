@@ -7,23 +7,25 @@ import styles from './gameHistory.module.css';
 // Export your GameHistory component!
 
 const CardComponent = ({sentence, correctCharacters, incorrectCharacters, wpm, time}) => {
-    return <div className={styles.card}>
-        <p className = {styles.cardContent}>
+    return (
+        <div className={styles.card}>
+          <p className = {styles.cardContent}>
             <b>Sentence: </b> {sentence}
-        </p>
-        <p className = {styles.cardContent}>
+          </p>
+          <p className = {styles.cardContent}>
             <b>Correct Characters: </b> {correctCharacters}
-        </p>
-        <p className = {styles.cardContent}><b>
+          </p>
+          <p className = {styles.cardContent}><b>
             Incorrect Characters: </b> {incorrectCharacters}
-        </p>
-        <p className = {styles.cardContent}>
+          </p>
+          <p className = {styles.cardContent}>
             <b>WPM: </b> {wpm}
-        </p>
-        <p className = {styles.cardContent}>
+          </p>
+          <p className = {styles.cardContent}>
             <b>Time: </b>{time}
-        </p>
-    </div>
+          </p>
+        </div>
+    );
 }
 
 export default CardComponent;
